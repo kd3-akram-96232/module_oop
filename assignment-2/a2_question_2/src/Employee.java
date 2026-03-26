@@ -1,12 +1,12 @@
-import java.util.Scanner;
-
-public class TestEmployee {
+public class Employee {
 
     private String first_name;
     private String last_name;
     private double monthly_salary = 0;
 
-    public TestEmployee(String first_name, String last_name, double monthly_salary) {
+    public Employee(){}
+
+    public Employee(String first_name, String last_name, double monthly_salary) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.monthly_salary = monthly_salary;
