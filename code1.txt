@@ -1,0 +1,11 @@
+bols "name: "
+bol "Akram"
+
+yele age = 21;
+
+agar age > 22 {
+    bol "age is greater than 18"
+}
+warna{
+    bol "below 18"
+}
