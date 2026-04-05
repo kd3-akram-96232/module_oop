@@ -1,0 +1,70 @@
+package a8_question_1;
+
+
+public class GrowableStack implements MyStack {
+	Employee[] emps;
+	int index = 0;
+	static int INCREASED_BY = 5;
+	
+	public GrowableStack() {
+		emps = new Employee[2];
+	}
+	
+	@Override
+	public boolean push(Employee emp){
+		if(index < emps.length) {			
+			emps[index] = emp;
+			index ++;
+			return true;
+		}else {
+			Employee[] temp = new Employee[emps.length + INCREASED_BY];
+			for(int i = 0; i < emps.length; i++) {
+				temp[i] = emps[i];
+			}
+			emps = temp;
+			this.push(emp);
+		}
+		
+		return false;
+	}
+	
+	@Override
+	public Employee peak(){
+		if(index < 1) {
+			return null;
+		}
+		return emps[index-1];
+	}
+	
+	@Override
+	public boolean pop(){
+		boolean isPop = false;
+		if(index > 0) {			
+			emps[index-1] = null;
+			index--;
+			isPop = true;
+		}
+		if(emps.length - index > INCREASED_BY) {
+			Employee[] temp = new Employee[emps.length - INCREASED_BY];
+			for(int i = 0; i<temp.length; i++) {
+				temp[i] = emps[i];
+			}
+			emps = temp;
+		}
+		return isPop;
+	}
+	
+	@Override
+	public Employee[] getEmps() {
+		return emps;
+	}
+	
+	@Override
+	public boolean isFull() {
+		if(index >= emps.length) {
+			return true;
+		}
+		return false;
+	}
+	
+}

@@ -1,11 +1,14 @@
-bols "name: "
-bol "Akram"
-
-yele age = 21;
-
-agar age > 22 {
-    bol "age is greater than 18"
+ye user = {
+    umar: 22
+    city: "Delhi"
 }
-warna{
-    bol "below 18"
+
+agar user.umar > 18 {
+    agar user.city == "Delhi" {
+        bol "Adult from Delhi"
+    } warna {
+        bol "Adult but not from Delhi"
+    }
+} warna {
+    bol "Minor"
 }
