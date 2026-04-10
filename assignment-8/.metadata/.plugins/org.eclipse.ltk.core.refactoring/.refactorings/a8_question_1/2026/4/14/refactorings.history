@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 2 elements from project &apos;a8_question_1&apos;&#x0D;&#x0A;- Original project: &apos;a8_question_1&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     a8_question_1/src/com.fixedstack&#x0D;&#x0A;     a8_question_1/src/growablestack" description="Delete elements" element1="/src&lt;growablestack" element2="/src&lt;com.fixedstack" element3="/src&lt;com" elements="3" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1775297202944" subPackages="false" version="1.0"/>
+</session>

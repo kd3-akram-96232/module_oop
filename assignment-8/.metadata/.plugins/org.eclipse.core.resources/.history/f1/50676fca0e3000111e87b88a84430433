@@ -1,0 +1,28 @@
+package a8_question_1;
+
+
+public class FixedStack {
+	int size;
+	Employee[] emps;
+	int index = 0;
+	
+	public FixedStack(int size) {
+		this.size = size;
+		emps = new Employee[size];
+	}
+	
+	public void push(Employee emp){
+		emps[index] = emp;
+		index ++;
+	}
+	
+	public Employee peak(){
+		return emps[index];
+	}
+	
+	public void poll(){
+		emps[index] = null;
+		index--;
+	}
+	
+}

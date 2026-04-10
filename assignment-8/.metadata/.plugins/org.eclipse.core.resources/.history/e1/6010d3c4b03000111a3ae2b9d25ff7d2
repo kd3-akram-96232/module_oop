@@ -1,0 +1,70 @@
+package a8_question_1;
+
+import java.util.Scanner;
+
+public class Program {
+	static Scanner scanner = new Scanner(System.in);
+	static GrowableStack fixedStack;
+	
+	static void menuList() {
+		System.out.println("1. Add Employee");
+		System.out.println("2. Peak");
+		System.out.println("3. Poll");
+		System.out.println("4. Display all emps");
+		System.out.println("5. get emps size");
+	}
+	
+	static int menuActions() {
+		menuList();
+		int choice;
+		System.out.println("Enter choice: ");
+		choice = scanner.nextInt();
+		
+		switch(choice) {
+			case 1:
+				Employee emp = new Employee();
+				emp.accept(scanner);
+				fixedStack.push(emp);
+				break;
+			case 2:
+				Employee emp1 = fixedStack.peak();
+				if(emp1 != null) {					
+					emp1.display();
+				}else {
+					System.out.println("Emp is null");
+				}
+				break;
+			case 3:
+				if(fixedStack.poll()) {
+					System.out.println("true");
+				}else {
+					System.out.println("false");
+				}
+				break;
+			case 4:
+				for(Employee emp3 : fixedStack.emps) {
+					if(emp3 != null) {						
+						emp3.display();
+					}else {
+						System.out.println("null");
+					}
+				}
+				break;
+			case 5:
+				int len = fixedStack.emps.length;
+				System.out.println("emps length: " + len);
+				break;
+		}
+		
+		return choice;
+	}
+	
+	public static void main(String[] args) {
+		fixedStack = new GrowableStack();
+		
+		while(menuActions() != 0) {
+			
+		}
+	}
+	
+}

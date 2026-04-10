@@ -1,0 +1,23 @@
+package a8_question_1;
+
+public class FixedStack {
+	int size;
+	int arr[];
+	
+	public FixedStack(int size) {
+		this.size = size;
+	}
+	
+	public void push(){
+		
+	}
+	
+	public void peak(){
+		
+	}
+	
+	public void poll(){
+		
+	}
+	
+}

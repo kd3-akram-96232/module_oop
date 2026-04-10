@@ -1,0 +1,29 @@
+package a8_question_1;
+
+class Employee {
+	int empid;
+	String name;
+	int index = 0;
+}
+
+public class FixedStack {
+	int size;
+	Employee[] emps;
+	
+	public FixedStack(int size) {
+		this.size = size;
+	}
+	
+	public void push(Employee emp){
+		
+	}
+	
+	public void peak(){
+		
+	}
+	
+	public void poll(){
+		
+	}
+	
+}

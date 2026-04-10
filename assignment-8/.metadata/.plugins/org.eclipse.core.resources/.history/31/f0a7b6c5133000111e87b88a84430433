@@ -1,0 +1,40 @@
+package a8_question_1;
+
+
+public class GrowableStack {
+	int size;
+	Employee[] emps;
+	int index = 0;
+	
+	public GrowableStack() {
+		this.size = 0;
+		emps = new Employee[0];
+	}
+	
+	public void push(Employee emp){
+			emps = new Employee[index];
+			emps[index] = emp;
+			index++;
+	}
+	
+	public Employee peak(){
+		if(index < 1) {
+			return null;
+		}
+		return emps[index-1];
+	}
+	
+	public boolean poll(){
+		if(index > 0) {			
+			emps[index-1] = null;
+			index--;
+			return true;
+		}
+		return false;
+	}
+	
+	public Employee[] getEmps() {
+		return emps;
+	}
+	
+}

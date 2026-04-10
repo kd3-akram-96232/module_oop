@@ -1,0 +1,9 @@
+package a8_question_1;
+
+public interface MyStack {
+	void push();
+	void peak();
+	void pop();
+	void getEmps(Employee[] emps);
+
+}

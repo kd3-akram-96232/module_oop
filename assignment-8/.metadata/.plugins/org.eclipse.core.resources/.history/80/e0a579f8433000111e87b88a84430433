@@ -1,0 +1,52 @@
+package a8_question_1;
+
+
+public class GrowableStack {
+//	int size;
+	Employee[] emps;
+	int size = 1;
+	
+	public GrowableStack() {
+//		this.size = 0;
+		emps = new Employee[size];
+	}
+	
+	public void push(Employee emp){
+			
+			if(size == 1) {
+				emps[size - 1] = emp;
+			}
+		
+			Employee[] temp = new Employee[++size];
+			for(int i = 0; i < emps.length; i++) {
+				temp[i] = emps[i];
+			}
+			temp[size] = emp;
+			size++;
+			emps = temp;
+	}
+	
+	public Employee peak(){
+		if(size < 1) {
+			return null;
+		}
+		return emps[size-1];
+	}
+	
+	public boolean poll(){
+		if(size > 0) {			
+			Employee[] temp = new Employee[--size];
+			for(int i = 0; i < size; i++) {
+				emps[i] = temp[i];
+			}
+			emps = temp;
+			return true;
+		}
+		return false;
+	}
+	
+	public Employee[] getEmps() {
+		return emps;
+	}
+	
+}

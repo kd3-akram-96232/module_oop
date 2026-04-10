@@ -1,0 +1,48 @@
+package a8_question_1;
+
+
+public class FixedStack implements MyStack {
+	int size;
+	Employee[] emps;
+	int index = 0;
+	
+	public FixedStack(int size) {
+		this.size = size;
+		emps = new Employee[size];
+	}
+	
+	@Override
+	public boolean push(Employee emp){
+		if(index < size) {			
+			emps[index] = emp;
+			index ++;
+			return true;
+		}
+		
+		return false;
+	}
+	
+	@Override
+	public Employee peak(){
+		if(index < 1) {
+			return null;
+		}
+		return emps[index-1];
+	}
+	
+	@Override
+	public boolean pop(){
+		if(index > 0) {			
+			emps[index-1] = null;
+			index--;
+			return true;
+		}
+		return false;
+	}
+	
+	@Override
+	public Employee[] getEmps() {
+		return emps;
+	}
+	
+}
